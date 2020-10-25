@@ -1,0 +1,67 @@
+TODO:
+- RatingScore
+- Year
+- Department
+- Award
+- Platform
+
+
+create domain RatingScore as numeric(10, 2)
+default 0
+check (value>=0 and value <= 5);
+
+create domain Year as numeric(10, 2)
+default 0
+check (value>=1900 and value <= 2020);
+
+create domain Department as varchar(20)
+
+
+
+Title
+tID(bigint) primary key, 
+name (varchar(25)) not null, 
+foreign key platform (bigint) reference Platform,
+year (int), 
+foreign key director (bigint) reference Crew, 
+genre (varchar(25), 
+country (varchar(25))
+
+
+Crew
+cID (bigint) primary key,
+first_name varchar(25) not null
+last_name varchar(25) not null
+tID bigint 	not null
+dept varchar(25)
+country varchar(25)
+
+
+Rating
+foreign key platform (bigint) reference Platform
+tID bigint not null
+score RatingScore not null
+type varchar(25)
+primary key (platform, tID, score)
+
+
+Oscars
+award Award not null
+year (int) not null
+foreign key tID (bigint) reference Title
+foreign key person (bigint) reference Crew
+primary key (award, year, tID, person)
+
+
+Platform
+pID (bigint) primary key,
+name varchar(25) not null
+type (varchar(25))
+
+
+UserReview
+uID (bigint) primary key,
+user varchar(25)
+foreign key platform (bigint) reference Platform,
+foreign key tID (bigint) reference Title
+rating RatingScore not null
