@@ -1,0 +1,42 @@
+-- Phase 2 Demo
+Assumptions:
+-- for the sake of this demo, we are assuming client has valid postgres database instance on their machine
+
+Instructions:
+-- in the same directory you downloaded schema.ddl, enter psql <YOUR_DB_INSTANCE_NAME> in your local terminal/shell
+-- You are now in your database's psql shell. Next, enter \i schema.ddl into the psql shell
+-- Expect the following output:
+    psql:schema.ddl:1: NOTICE:  drop cascades to 5 other objects
+    DETAIL:  drop cascades to type movie.department
+    drop cascades to type movie.award
+    drop cascades to type movie.platform
+    drop cascades to type movie.ratingscore
+    drop cascades to type movie.year
+    DROP SCHEMA
+    CREATE SCHEMA
+    SET
+    CREATE DOMAIN
+    CREATE DOMAIN
+    CREATE DOMAIN
+    CREATE DOMAIN
+    CREATE DOMAIN
+    CREATE TABLE
+    CREATE TABLE
+    CREATE TABLE
+    CREATE TABLE
+    CREATE TABLE
+    CREATE TABLE
+    ALTER TABLE
+-- expect the following output when you enter \d
+              List of relations
+ Schema |     Name      | Type  |    Owner
+--------+---------------+-------+-------------
+ movie  | crew          | table | <NAME_OF_YOUR_MACHINE>
+ movie  | movieplatform | table | <NAME_OF_YOUR_MACHINE>
+ movie  | oscars        | table | <NAME_OF_YOUR_MACHINE>
+ movie  | rating        | table | <NAME_OF_YOUR_MACHINE>
+ movie  | title         | table | <NAME_OF_YOUR_MACHINE>
+ movie  | userreview    | table | <NAME_OF_YOUR_MACHINE>
+(6 rows)
+
+
