@@ -51,4 +51,32 @@ create table Crew(
 
 create table Rating(
     title integer not null,
-                                                                                                                                   1,1           Top
+    platform integer not null,
+    foreign key (platform) references MoviePlatform(pID),
+    foreign key (title) references Title(tID),
+    score RatingScore,
+    type varchar(25),
+    primary key (platform, title, score)
+);
+
+create table Oscars(
+    award Award,
+    year Year,
+    title integer not null,
+    winner integer,
+    foreign key (title) references Title(tID),
+    foreign key (winner) references Crew(cID),
+    primary key (award, year, title, winner)
+);
+
+create table UserReview(
+    uID integer primary key,
+    username varchar(25) not null,
+    platform integer,
+    title integer,
+    foreign key (platform) references MoviePlatform(pID),
+    foreign key (title) references Title(tID),
+    rating RatingScore
+);
+
+alter table Title add foreign key (director) references Crew(cID);
