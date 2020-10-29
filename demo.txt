@@ -1,10 +1,18 @@
 -- Phase 2 Demo
+
 Assumptions:
+
 -- for the sake of this demo, we are assuming client has valid postgres database instance on their machine
 
+-- here is a link to the official postgres documentation about setting up your database instance
+https://www.postgresql.org/docs/9.1/manage-ag-createdb.html
+
 Instructions:
+
 -- in the same directory you downloaded schema.ddl, enter psql <YOUR_DB_INSTANCE_NAME> in your local terminal/shell
+
 -- You are now in your database's psql shell. Next, enter \i schema.ddl into the psql shell
+
 -- Expect the following output:
     psql:schema.ddl:1: NOTICE:  drop cascades to 5 other objects
     DETAIL:  drop cascades to type movie.department
@@ -27,6 +35,7 @@ Instructions:
     CREATE TABLE
     CREATE TABLE
     ALTER TABLE
+
 -- expect the following output when you enter \d
               List of relations
  Schema |     Name      | Type  |    Owner
